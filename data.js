@@ -108,7 +108,6 @@ window.SITE_DATA = {
       org: "University of Technology Sydney",
       dates: "Feb 2026 – Oct 2026",
       bullets: [
-        "Selected for the UTS Lucy Mentoring Program, an industry mentoring program for students.",
         "Took part in the program's professional development workshops."
       ],
       image: "",          // e.g. "images/lucy.jpg"
@@ -122,7 +121,8 @@ window.SITE_DATA = {
       degree: "Master of Information Technology",
       school: "University of Technology Sydney",
       dates: "Aug 2024 – Jul 2026",
-      notes: "Data Analytics, Databases, SAS Predictive Business Analytics, Data Visualisation, Enterprise Information Systems. Took part in a hackathon covering product positioning, target users and website testing."
+      notes: "Data Analytics, Databases, SAS Predictive Business Analytics, Data Visualisation, Enterprise Information Systems." 
+         "Took part in a hackathon covering product positioning, target users and website testing."
     },
     {
       degree: "Bachelor of International Business",
