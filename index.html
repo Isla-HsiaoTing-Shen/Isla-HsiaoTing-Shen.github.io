@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio</title>
+<meta name="description" content="Business and data analyst portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7F9;
+    --surface: #FFFFFF;
+    --ink: #1C2433;
+    --muted: #5A6476;
+    --line: #DCE1E8;
+    --grid: rgba(31, 111, 139, 0.07);
+    --accent: #1F6F8B;
+    --mark: #FFE07A;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121720; --surface: #192030; --ink: #E6EAF1; --muted: #9AA4B6;
+      --line: #2A3346; --grid: rgba(108, 195, 222, 0.06); --accent: #6CC3DE; --mark: rgba(255, 210, 80, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121720; --surface: #192030; --ink: #E6EAF1; --muted: #9AA4B6;
+    --line: #2A3346; --grid: rgba(108, 195, 222, 0.06); --accent: #6CC3DE; --mark: rgba(255, 210, 80, 0.35);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem); scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, iframe { max-width: 100%; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; }
+
+  .wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Navigation */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 3.75rem; }
+  .nav-name { font-family: var(--display); font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .nav-links { display: flex; gap: 1.25rem; overflow-x: auto; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; white-space: nowrap; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .wrap { padding-top: clamp(3.5rem, 10vw, 7rem); padding-bottom: clamp(3rem, 8vw, 5.5rem); }
+  .hero h1 { font-size: clamp(2.75rem, 8vw, 5rem); font-weight: 700; letter-spacing: -0.03em; }
+  .hero .role { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.6vw, 1.5rem); color: var(--accent); margin: 0.5rem 0 0; }
+  .hero .summary { max-width: 38rem; margin: 1.5rem 0 0; font-size: 1.125rem; }
+  .status { display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 1.5rem; font-size: 0.95rem; color: var(--muted); }
+  .status::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: #2E9E6B; box-shadow: 0 0 0 4px rgba(46, 158, 107, 0.18); }
+  .contact { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+  .btn {
+    display: inline-block; padding: 0.6rem 1.1rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; border: 1.5px solid var(--accent); color: var(--accent); background: var(--surface);
+  }
+  .btn.primary { background: var(--accent); color: var(--surface); }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* Sections */
+  section.block { padding: clamp(3rem, 7vw, 5rem) 0; border-bottom: 1px solid var(--line); }
+  .block h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2rem; }
+
+  mark {
+    color: inherit; padding: 0 0.1em;
+    background: linear-gradient(transparent 52%, var(--mark) 52%) no-repeat;
+    background-size: 100% 100%;
+  }
+  .js-anim mark { background-size: 0% 100%; transition: background-size 0.7s ease-out; }
+  .js-anim mark.drawn { background-size: 100% 100%; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+  .tags li { font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.75rem 2rem; }
+  .skills h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+  /* Projects */
+  .project { display: grid; grid-template-columns: 1fr; gap: 1.25rem 3rem; padding: 2.25rem 0; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  @media (min-width: 52rem) { .project { grid-template-columns: 19rem 1fr; } }
+  .project .context { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.35rem; }
+  .project h3 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 1rem; }
+  .project .links { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
+  .project .links a { font-weight: 600; }
+  .question {
+    font-family: var(--display); font-weight: 500; font-size: 1.25rem; line-height: 1.4;
+    margin: 0 0 1.25rem; padding-left: 1rem; border-left: 3px solid var(--accent); max-width: 40rem;
+  }
+  .points { margin: 0; padding-left: 1.2rem; max-width: 40rem; }
+  .points li { margin-bottom: 0.6rem; }
+  .points li::marker { color: var(--accent); }
+  .embed { grid-column: 1 / -1; aspect-ratio: 16 / 10; width: 100%; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+
+  /* Experience timeline */
+  .job { display: grid; grid-template-columns: 1fr; gap: 0.25rem 2rem; padding: 1.75rem 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  @media (min-width: 46rem) { .job { grid-template-columns: 11rem 1fr; } }
+  .job .dates { color: var(--muted); font-size: 0.95rem; padding-top: 0.2rem; }
+  .job h3 { font-size: 1.2rem; font-weight: 700; }
+  .job .org { color: var(--muted); margin: 0.15rem 0 0.75rem; }
+
+  /* Community */
+  .community-photo { display: block; margin-top: 1rem; width: 100%; max-width: 26rem; border-radius: 6px; border: 1px solid var(--line); }
+
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+  @media (min-width: 46rem) { .edu-grid { grid-template-columns: 3fr 2fr; } }
+  .edu-item { margin-bottom: 1.5rem; }
+  .edu-item h3 { font-size: 1.15rem; font-weight: 700; }
+  .edu-item .meta { color: var(--muted); margin: 0.15rem 0 0.4rem; }
+  .edu-item p { margin: 0; font-size: 0.98rem; }
+  .sub { font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin: 0 0 1rem; }
+  .certs { list-style: none; margin: 0; padding: 0; }
+  .certs li { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .certs .meta { display: block; color: var(--muted); font-size: 0.92rem; }
+
+  footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.92rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem; }
+
+  .load-error { max-width: 40rem; margin: 4rem auto; padding: 1.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js-anim mark { transition: none; background-size: 100% 100%; }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<!-- All site content lives in data.js -->
+<script src="data.js"></script>
+
+<script>
+(function () {
+  var app = document.getElementById("app");
+  var D = window.SITE_DATA;
+
+  if (!D) {
+    app.innerHTML = '<div class="load-error"><h2>Content could not be loaded</h2>' +
+      '<p>Check that data.js is in the same folder as index.html, and that every item ends with a comma and every text sits inside double quotes.</p></div>';
+    return;
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function rich(s) { return esc(s).replace(/==(.+?)==/g, "<mark>$1</mark>"); }
+  function has(v) { return Array.isArray(v) ? v.length > 0 : !!(v && String(v).trim()); }
+  function ext(url, label, cls) {
+    var external = /^https?:/.test(url);
+    return '<a' + (cls ? ' class="' + cls + '"' : '') + ' href="' + esc(url) + '"' +
+      (external ? ' target="_blank" rel="noopener"' : '') + '>' + esc(label) + '</a>';
+  }
+  function tags(list) {
+    return has(list) ? '<ul class="tags">' + list.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : "";
+  }
+
+  var p = D.profile || {};
+  document.title = (p.name || "Portfolio") + (p.role ? " | " + p.role : "");
+
+  var html = "";
+
+  /* Navigation */
+  var nav = [];
+  if (has(D.projects)) nav.push('<a href="#projects">Projects</a>');
+  if (has(D.experience)) nav.push('<a href="#experience">Experience</a>');
+  if (has(D.community)) nav.push('<a href="#community">Community</a>');
+  if (has(D.education) || has(D.certifications)) nav.push('<a href="#education">Education</a>');
+  if (has(p.email)) nav.push('<a href="mailto:' + esc(p.email) + '">Contact</a>');
+  html += '<header class="nav"><div class="wrap"><a class="nav-name" href="#top">' + esc(p.name) +
+    '</a><nav class="nav-links" aria-label="Sections">' + nav.join("") + "</nav></div></header>";
+
+  /* Hero */
+  var contact = [];
+  if (has(p.email)) contact.push("<li>" + ext("mailto:" + p.email, "Email me", "btn primary") + "</li>");
+  if (has(p.linkedin)) contact.push("<li>" + ext(p.linkedin, "LinkedIn", "btn") + "</li>");
+  if (has(p.github)) contact.push("<li>" + ext(p.github, "GitHub", "btn") + "</li>");
+  if (has(p.cv)) contact.push("<li>" + ext(p.cv, "Download CV", "btn") + "</li>");
+  html += '<main id="top"><section class="hero" aria-label="Introduction"><div class="wrap">' +
+    "<h1>" + esc(p.name) + "</h1>" +
+    (has(p.role) ? '<p class="role">' + esc(p.role) + (has(p.location) ? ", " + esc(p.location) : "") + "</p>" : "") +
+    (has(p.summary) ? '<p class="summary">' + rich(p.summary) + "</p>" : "") +
+    (has(contact) ? '<ul class="contact">' + contact.join("") + "</ul>" : "") +
+    (has(p.status) ? '<p class="status">' + esc(p.status) + "</p>" : "") +
+    "</div></section>";
+
+  /* Skills */
+  if (has(D.skills)) {
+    html += '<section class="block" id="skills"><div class="wrap"><h2>Skills</h2><div class="skills">' +
+      D.skills.map(function (g) { return "<div><h3>" + esc(g.group) + "</h3>" + tags(g.items) + "</div>"; }).join("") +
+      "</div></div></section>";
+  }
+
+  /* Projects */
+  if (has(D.projects)) {
+    html += '<section class="block" id="projects"><div class="wrap"><h2>Projects</h2>' +
+      D.projects.map(function (pr) {
+        var links = (pr.links || []).filter(function (l) { return has(l.url); });
+        return '<article class="project"><div>' +
+          (has(pr.context) ? '<p class="context">' + esc(pr.context) + "</p>" : "") +
+          "<h3>" + esc(pr.title) + "</h3>" + tags(pr.tools) +
+          (links.length ? '<ul class="links">' + links.map(function (l) { return "<li>" + ext(l.url, l.label || "Open link") + "</li>"; }).join("") + "</ul>" : "") +
+          "</div><div>" +
+          (has(pr.question) ? '<p class="question">' + rich(pr.question) + "</p>" : "") +
+          (has(pr.highlights) ? '<ul class="points">' + pr.highlights.map(function (h) { return "<li>" + rich(h) + "</li>"; }).join("") + "</ul>" : "") +
+          "</div>" +
+          (has(pr.powerbi) ? '<iframe class="embed" title="' + esc(pr.title) + ' dashboard" src="' + esc(pr.powerbi) + '" loading="lazy" allowfullscreen></iframe>' : "") +
+          "</article>";
+      }).join("") + "</div></section>";
+  }
+
+  /* Experience */
+  if (has(D.experience)) {
+    html += '<section class="block" id="experience"><div class="wrap"><h2>Experience</h2>' +
+      D.experience.map(function (j) {
+        return '<article class="job"><div class="dates">' + esc(j.dates) + "</div><div>" +
+          "<h3>" + esc(j.role) + "</h3>" +
+          '<p class="org">' + esc(j.company) + (has(j.location) ? ", " + esc(j.location) : "") + "</p>" +
+          (has(j.bullets) ? '<ul class="points">' + j.bullets.map(function (b) { return "<li>" + rich(b) + "</li>"; }).join("") + "</ul>" : "") +
+          "</div></article>";
+      }).join("") + "</div></section>";
+  }
+
+  /* Leadership & community */
+  if (has(D.community)) {
+    html += '<section class="block" id="community"><div class="wrap"><h2>Leadership &amp; community</h2>' +
+      D.community.map(function (c) {
+        return '<article class="job"><div class="dates">' + esc(c.dates) + "</div><div>" +
+          "<h3>" + esc(c.title) + "</h3>" +
+          (has(c.org) ? '<p class="org">' + esc(c.org) + "</p>" : "") +
+          (has(c.bullets) ? '<ul class="points">' + c.bullets.map(function (b) { return "<li>" + rich(b) + "</li>"; }).join("") + "</ul>" : "") +
+          (has(c.image) ? '<img class="community-photo" src="' + esc(c.image) + '" alt="' + esc(c.imageAlt || c.title) + '" loading="lazy">' : "") +
+          "</div></article>";
+      }).join("") + "</div></section>";
+  }
+
+  /* Education + certifications */
+  if (has(D.education) || has(D.certifications)) {
+    html += '<section class="block" id="education"><div class="wrap"><h2>Education</h2><div class="edu-grid"><div>' +
+      (D.education || []).map(function (e) {
+        return '<div class="edu-item"><h3>' + esc(e.degree) + "</h3>" +
+          '<p class="meta">' + esc(e.school) + (has(e.dates) ? ", " + esc(e.dates) : "") + "</p>" +
+          (has(e.notes) ? "<p>" + rich(e.notes) + "</p>" : "") + "</div>";
+      }).join("") + "</div>";
+    if (has(D.certifications)) {
+      html += '<div><h3 class="sub">Certifications</h3><ul class="certs">' +
+        D.certifications.map(function (c) {
+          var name = has(c.url) ? ext(c.url, c.name) : esc(c.name);
+          var meta = [c.issuer, c.year].filter(has).map(esc).join(", ");
+          return "<li>" + name + (meta ? '<span class="meta">' + meta + "</span>" : "") + "</li>";
+        }).join("") + "</ul></div>";
+    }
+    html += "</div></div></section>";
+  }
+
+  html += "</main><footer><div class=\"wrap\"><span>&copy; " + new Date().getFullYear() + " " + esc(p.name) + "</span>" +
+    (has(D.lastUpdated) ? "<span>Last updated " + esc(D.lastUpdated) + "</span>" : "") + "</div></footer>";
+
+  app.innerHTML = html;
+
+  /* Highlighter marks draw in once as they scroll into view */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-anim");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("drawn"); io.unobserve(en.target); }
+      });
+    }, { threshold: 1 });
+    document.querySelectorAll("mark").forEach(function (m) { io.observe(m); });
+  }
+})();
+</script>
+</body>
+</html>
