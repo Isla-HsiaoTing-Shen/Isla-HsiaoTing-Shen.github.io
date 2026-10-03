@@ -251,7 +251,7 @@
       }).join("") + "</div></section>";
   }
 
-  /* Leadership & community */
+  /* Community */
   if (has(D.community)) {
     html += '<section class="block" id="community"><div class="wrap"><h2>Leadership &amp; community</h2>' +
       D.community.map(function (c) {
@@ -273,7 +273,7 @@
           (has(e.notes) ? "<p>" + rich(e.notes) + "</p>" : "") + "</div>";
       }).join("") + "</div>";
     if (has(D.certifications)) {
-      html += '<div><h3 class="sub">Certifications</h3><ul class="certs">' +
+      html += '<div><h2 class="sub">Certifications</h2><ul class="certs">' +
         D.certifications.map(function (c) {
           var name = has(c.url) ? ext(c.url, c.name) : esc(c.name);
           var meta = [c.issuer, c.year].filter(has).map(esc).join(", ");
