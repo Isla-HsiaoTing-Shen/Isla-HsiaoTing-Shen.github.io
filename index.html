@@ -270,7 +270,7 @@
       (D.education || []).map(function (e) {
         return '<div class="edu-item"><h3>' + esc(e.degree) + "</h3>" +
           '<p class="meta">' + esc(e.school) + (has(e.dates) ? ", " + esc(e.dates) : "") + "</p>" +
-          (has(e.notes) ? "<p>" + rich(e.notes) + "</p>" : "") + "</div>";
+          (has(e.notes) ? [].concat(e.notes).map(function (n) { return "<p>" + rich(n) + "</p>"; }).join("") : "") + "</div>";
       }).join("") + "</div>";
     if (has(D.certifications)) {
       html += '<div><h2 class="sub">Certifications</h2><ul class="certs">' +
