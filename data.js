@@ -11,21 +11,18 @@ window.SITE_DATA = {
   /* ---------- Profile ---------- */
   profile: {
     name: "Isla Shen",
-    role: "Business Analyst & Data Analyst",
-    location: "Sydney, NSW",
-    status: "Open to Business Analyst and Data Analyst roles",
+    role: "Business Analyst | Data Analyst | Digital Marketing",
     summary:
-      "I'm a Master of IT graduate from UTS moving into business and data analysis. I turn business questions into clear requirements, then into data pipelines, models and dashboards people can act on. Before IT, I worked in digital marketing in Taipei, where I learned to read performance data and keep sales teams aligned on what it meant.",
+      "I'm a Master of IT graduate from UTS moving into business and data analysis. I turn business questions into clear requirements, then into data pipelines, models and dashboards people can act on. Before IT, I worked in digital marketing, where I learned to read performance data and keep sales teams aligned on what it meant.",
     email: "islashen17@gmail.com",
-    linkedin: "",
-    github: "",
-    cv: ""   // e.g. "files/Isla_Shen_CV.pdf"
+    linkedin: "https://www.linkedin.com/in/isla-shen-1b2047298/",
+    github: "https://github.com/Isla-HsiaoTing-Shen",
   },
 
   /* ---------- Skills ---------- */
   skills: [
     { group: "Business analysis", items: ["Requirements elicitation", "Business process analysis", "Stakeholder engagement", "Solution validation", "Root cause analysis"] },
-    { group: "Data", items: ["SQL", "Python", "pandas", "ETL / ELT pipelines", "Data quality & validation", "Statistical analysis"] },
+    { group: "Data", items: ["SQL", "Python", "ETL pipelines"] },
     { group: "Reporting", items: ["Power BI", "Tableau", "Looker Studio", "Excel"] },
     { group: "Cloud & systems", items: ["Azure SQL", "Salesforce (Force.com)", "REST APIs"] }
   ],
@@ -44,7 +41,7 @@ window.SITE_DATA = {
       tools: ["Python", "pandas", "Azure SQL", "Streamlit", "OpenStreetMap API"],
       powerbi: "",
       links: [
-        { label: "View code on GitHub", url: "" }
+        { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/RentWise" }
       ]
     }
 
