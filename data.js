@@ -44,7 +44,23 @@ window.SITE_DATA = {
         { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/RentWise" }
       ]
     }
-
+    ,{
+      title: "FreshMart Rewards: Loyalty Member Churn Analysis",
+      context: "Personal project · In progress · Simulated supermarket loyalty data",
+      question: "Member churn is rising. Which members are at risk, and how can we win them back with effective offers?",
+      highlights: [
+        "Designed a 10-table PostgreSQL database and loaded ==4M+== rows with reproducible SQL scripts",
+        "Defined churn with data, not guesswork: only ==17%== of members return after 8 weeks away, so churn = 8 weeks without a purchase",
+        "Showed monthly churn rose ==~50%== (2.4% → 3.5%) and drilled down to ==3 stores== in Brisbane North where churn tripled from Sep 2025",
+        "Built RFM segments and identified ==427== high-value at-risk members, representing ==~$860K== in annual revenue",
+        "Spotted a reverse-causality trap in offer data that would have led to a misleading recommendation"
+      ],
+      tools: ["SQL", "PostgreSQL", "Git"],
+      powerbi: "",
+      links: [
+        { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/freshmart-rewards-analysis" }
+      ]
+    }
     /* ===== Template: copy into the list above =====
     ,{
       title: "Project title",
