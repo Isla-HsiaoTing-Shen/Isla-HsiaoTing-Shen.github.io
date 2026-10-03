@@ -137,8 +137,9 @@ window.SITE_DATA = {
       degree: "Master of Information Technology",
       school: "University of Technology Sydney",
       dates: "Aug 2024 – Jul 2026",
-      notes: "Data Analytics, Databases, SAS Predictive Business Analytics, Data Visualisation, Enterprise Information Systems." 
+      notes: ["Data Analytics, Databases, SAS Predictive Business Analytics, Data Visualisation, Enterprise Information Systems." 
          "Took part in a hackathon covering product positioning, target users and website testing."
+              ]
     },
     {
       degree: "Bachelor of International Business",
