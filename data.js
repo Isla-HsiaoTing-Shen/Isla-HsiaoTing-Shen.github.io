@@ -83,7 +83,7 @@ window.SITE_DATA = {
   /* ---------- Experience (most recent first) ---------- */
   experience: [
     {
-      role: "Project Manager",
+      role: "Product Management Intern",
       company: "EVAHELD",
       location: "Sydney",
       dates: "Apr 2025 – Jul 2025",
@@ -106,7 +106,7 @@ window.SITE_DATA = {
       ]
     },
     {
-      role: "Product Marketing Analyst",
+      role: "Product Marketing Intern ",
       company: "JMicron Technology Corporation",
       location: "Taipei",
       dates: "Mar 2021 – Jun 2021",
