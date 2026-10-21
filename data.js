@@ -29,16 +29,16 @@ window.SITE_DATA = {
 
   /* ---------- Projects (top item shows first) ---------- */
   projects: [
-    {
-      title: "RentWise NSW: Suburb Suitability Analysis Tool",
+   {
+      title: "NSW Rent Fairness Dashboard",
       context: "Independent project",
-      question: "Where in Sydney can a renter afford to live without giving up what matters to them?",
+      question: "A Power BI tool that helps NSW renters check whether a weekly rent is below, within or above the local market range.",
       highlights: [
-        "Built a weighted, persona-based scoring model that ranks ==28 Sydney suburbs== on affordability and liveability.",
-        "Integrated ==4 NSW government data sources== through an ETL/ELT pipeline, loading ==600,000+ records== into a 9-table Azure SQL warehouse with documented source-to-target mappings.",
-        "Found and fixed a pipeline defect that was silently dropping ==40,000 records==, then documented data lineage and validation rules so results can be reproduced."
+        "Defined the problem and scope in a business requirements document with ==5 user stories== and acceptance criteria, narrowing the project from a suburb recommendation tool to a rent check tool after finding the scoring weights could not be validated.",
+        "Built an ELT pipeline in Python and SQL to load ==1.6M== NSW rental bond records (2021–2025) into Azure SQL, applied 7 documented cleaning rules, and calculated rent benchmarks for ==5,200+== postcode, dwelling type and bedroom combinations.",
+        "Found that median flat rents in NSW rose ==52%== from 2021 to 2025, with Greater Sydney flats rising almost twice as fast as the rest of NSW (56% vs 29%)."
       ],
-      tools: ["Python", "pandas", "Azure SQL", "Streamlit", "OpenStreetMap API"],
+      tools: ["SQL", "Python (pandas)", "Azure SQL", "Power BI (DAX)"],
       powerbi: "",
       links: [
         { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/RentWise" }
