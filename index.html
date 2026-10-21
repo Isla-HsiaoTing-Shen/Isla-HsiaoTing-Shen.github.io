@@ -82,6 +82,8 @@
   }
   .btn.primary { background: var(--accent); color: var(--surface); }
   .btn:hover { filter: brightness(1.08); }
+  button.btn { font-family: inherit; cursor: pointer; line-height: inherit; }
+  .email-line { margin: 1rem 0 0; font-weight: 500; }
 
   /* Sections */
   section.block { padding: clamp(3rem, 7vw, 5rem) 0; border-bottom: 1px solid var(--line); }
@@ -202,7 +204,7 @@
 
   /* Hero */
   var contact = [];
-  if (has(p.email)) contact.push("<li>" + ext("mailto:" + p.email, "Email me", "btn primary") + "</li>");
+    if (has(p.email)) contact.push('<li><button type="button" class="btn primary" id="copy-email" data-email="' + esc(p.email) + '">Copy email</button></li>');
   if (has(p.linkedin)) contact.push("<li>" + ext(p.linkedin, "LinkedIn", "btn") + "</li>");
   if (has(p.github)) contact.push("<li>" + ext(p.github, "GitHub", "btn") + "</li>");
   if (has(p.cv)) contact.push("<li>" + ext(p.cv, "Download CV", "btn") + "</li>");
@@ -211,6 +213,7 @@
     (has(p.role) ? '<p class="role">' + esc(p.role) + (has(p.location) ? ", " + esc(p.location) : "") + "</p>" : "") +
     (has(p.summary) ? '<p class="summary">' + rich(p.summary) + "</p>" : "") +
     (has(contact) ? '<ul class="contact">' + contact.join("") + "</ul>" : "") +
+    (has(p.email) ? '<p class="email-line">' + ext("mailto:" + p.email, p.email) + "</p>" : "") +
     (has(p.status) ? '<p class="status">' + esc(p.status) + "</p>" : "") +
     "</div></section>";
 
@@ -287,6 +290,19 @@
     (has(D.lastUpdated) ? "<span>Last updated " + esc(D.lastUpdated) + "</span>" : "") + "</div></footer>";
 
   app.innerHTML = html;
+  /* Copy email button */
+  var cb = document.getElementById("copy-email");
+  if (cb) {
+    cb.addEventListener("click", function () {
+      var email = cb.getAttribute("data-email");
+      function done() { cb.textContent = "Copied!"; setTimeout(function () { cb.textContent = "Copy email"; }, 2000); }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(done, function () { window.prompt("Copy my email:", email); });
+      } else {
+        window.prompt("Copy my email:", email);
+      }
+    });
+  }
 
   /* Highlighter marks draw in once as they scroll into view */
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
