@@ -47,13 +47,13 @@ window.SITE_DATA = {
      ,{
       title: "RentWise: NSW Rent Check Website",
       context: "Side project · Live website",
-      question: "Is my rent fair, and where nearby could my budget work? I turned my NSW rental bond analysis into a free public website for renters.",
+      question: "Is my rent fair, and where could my budget work? A free public website for NSW renters.",
       highlights: [
-        "Turned two renter needs, checking a current rent and finding where a budget works, into one page with clear business rules: an area is a Good chance if its median rent fits the budget, and Possible if only the cheaper ==25%== fits.",
-        "When a friend asked to see the lowest and highest rents, checked the data first and found extreme values (==$243== and ==$6,000== for 2-bedroom flats in one postcode), so showed the 5th–95th percentile range instead, labelled \"excluding extremes\".",
-        "Rebuilt the rent trend from quarterly to yearly after small samples left gaps, recalculating each year's median from individual leases instead of averaging quarterly medians, and keeping only years with ==30+== leases.",
-        "Found ==162== suburb names shared by more than one postcode (e.g. Red Hill has 3), and changed the search to ask users to choose instead of silently picking the first match.",
-        "Wrote separate SQL export queries so the existing Power BI views stayed unchanged, checked the licence of every data source, linked to listing sites by text only with no scraping, and disclosed AI coding assistance on the site."
+       "Turned two renter needs into one page with clear rules: Good chance if the median rent fits the budget, Possible if only the cheaper ==25%== fits.",
+        "Checked the data behind a request for min/max rents, found extremes (==$243== vs ==$6,000==), and showed the 5th–95th percentiles instead.",
+        "Rebuilt the trend as yearly medians from individual leases, keeping only years with ==30+== leases, after quarterly data left gaps.",
+        "Found ==162== suburb names shared across postcodes and made the search ask users to choose, instead of silently picking one.",
+        "Kept the Power BI views unchanged, checked every data licence, used text-only links with no scraping, and disclosed AI coding help."
       ],
       tools: ["SQL", "Python", "JavaScript", "Leaflet", "Chart.js"],
       powerbi: "",
