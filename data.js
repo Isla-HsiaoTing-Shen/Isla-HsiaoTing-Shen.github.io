@@ -59,7 +59,7 @@ window.SITE_DATA = {
       powerbi: "",
       links: [
         { label: "Open the live website", url: "https://rentwise-xi.vercel.app" },
-        { label: "View website code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/rentwise-website" }
+        { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/rentwise-website" }
       ]
     }
      ,{
