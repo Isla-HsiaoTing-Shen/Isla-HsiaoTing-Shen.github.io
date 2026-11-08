@@ -24,7 +24,7 @@ window.SITE_DATA = {
     { group: "Business analysis", items: ["Requirements elicitation", "Business process analysis", "Stakeholder engagement", "Solution validation", "Root cause analysis"] },
     { group: "Data", items: ["SQL", "Python", "ETL pipelines"] },
     { group: "Reporting", items: ["Power BI", "Tableau", "Looker Studio", "Excel"] },
-    { group: "Cloud & systems", items: ["Azure SQL", "Salesforce (Force.com)", "REST APIs"] }
+    { group: "Cloud & systems", items: ["Azure SQL", "Salesforce (Force.com)"] }
   ],
 
   /* ---------- Projects (top item shows first) ---------- */
