@@ -31,7 +31,7 @@ window.SITE_DATA = {
   projects: [
    {
       title: "NSW Rent Fairness Dashboard",
-      context: "Independent project",
+      context: "Side project",
       question: "A Power BI tool that helps NSW renters check whether a weekly rent is below, within or above the local market range.",
       highlights: [
         "Defined the problem and scope in a business requirements document with ==5 user stories== and acceptance criteria, narrowing the project from a suburb recommendation tool to a rent check tool after finding the scoring weights could not be validated.",
@@ -44,9 +44,27 @@ window.SITE_DATA = {
         { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/RentWise" }
       ]
     }
-    ,{
+     ,{
+      title: "RentWise: NSW Rent Check Website",
+      context: "Side project · Live website",
+      question: "Is my rent fair, and where nearby could my budget work? I turned my NSW rental bond analysis into a free public website for renters.",
+      highlights: [
+        "Turned two renter needs, checking a current rent and finding where a budget works, into one page with clear business rules: an area is a Good chance if its median rent fits the budget, and Possible if only the cheaper ==25%== fits.",
+        "When a friend asked to see the lowest and highest rents, checked the data first and found extreme values (==$243== and ==$6,000== for 2-bedroom flats in one postcode), so showed the 5th–95th percentile range instead, labelled \"excluding extremes\".",
+        "Rebuilt the rent trend from quarterly to yearly after small samples left gaps, recalculating each year's median from individual leases instead of averaging quarterly medians, and keeping only years with ==30+== leases.",
+        "Found ==162== suburb names shared by more than one postcode (e.g. Red Hill has 3), and changed the search to ask users to choose instead of silently picking the first match.",
+        "Wrote separate SQL export queries so the existing Power BI views stayed unchanged, checked the licence of every data source, linked to listing sites by text only with no scraping, and disclosed AI coding assistance on the site."
+      ],
+      tools: ["SQL", "Python", "JavaScript", "Leaflet", "Chart.js"],
+      powerbi: "",
+      links: [
+        { label: "Open the live website", url: "https://rentwise-xi.vercel.app" },
+        { label: "View website code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/rentwise-website" }
+      ]
+    }
+     ,{
       title: "FreshMart Rewards: Loyalty Member Churn Analysis",
-      context: "Personal project · In progress · Simulated supermarket loyalty data",
+      context: "Side project · In progress",
       question: "Member churn is rising. Which members are at risk, and how can we win them back with effective offers?",
       highlights: [
         "Designed a 10-table PostgreSQL database and loaded ==4M+== rows with reproducible SQL scripts",
@@ -61,6 +79,7 @@ window.SITE_DATA = {
         { label: "View code on GitHub", url: "https://github.com/Isla-HsiaoTing-Shen/freshmart-rewards-analysis" }
       ]
     }
+     
     /* ===== Template: copy into the list above =====
     ,{
       title: "Project title",
