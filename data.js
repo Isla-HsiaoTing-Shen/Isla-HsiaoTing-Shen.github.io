@@ -50,10 +50,9 @@ window.SITE_DATA = {
       question: "Is my rent fair, and where could my budget work? A free public website for NSW renters.",
       highlights: [
        "Turned two renter needs into one page with clear rules: Good chance if the median rent fits the budget, Possible if only the cheaper ==25%== fits.",
-        "Checked the data behind a request for min/max rents, found extremes (==$243== vs ==$6,000==), and showed the 5th–95th percentiles instead.",
+        "Checked the data behind a request for min/max rents and showed the 5th–95th percentiles instead.",
         "Rebuilt the trend as yearly medians from individual leases, keeping only years with ==30+== leases, after quarterly data left gaps.",
         "Found ==162== suburb names shared across postcodes and made the search ask users to choose, instead of silently picking one.",
-        "Kept the Power BI views unchanged, checked every data licence, used text-only links with no scraping, and disclosed AI coding help."
       ],
       tools: ["SQL", "Python", "JavaScript", "Leaflet", "Chart.js"],
       powerbi: "",
